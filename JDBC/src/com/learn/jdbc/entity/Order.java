@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -11,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Order {
     private String id;
-    private Date order_time;
+    private LocalDateTime order_time;
     private Integer total_count;
     private Double total_amount;
     private Integer state;

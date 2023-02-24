@@ -15,9 +15,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -99,7 +98,7 @@ public class OrderDAOTest {
         long time = System.currentTimeMillis();//获取当前系统时间距离1970-1-1 0:0:0 0毫秒的毫秒数
         String orderId = time + "" + login.getId();
 
-        Order order = new Order(orderId, new Date(), list.size(), totalAmount, 0, login.getId());
+        Order order = new Order(orderId, LocalDateTime.now(), list.size(), totalAmount, 0, login.getId());
         od.saveOrder(order);
 
         //2、保存所有的订单明细
